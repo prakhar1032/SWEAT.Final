@@ -7,7 +7,7 @@
     android:background="@drawable/baground"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="SWEAT.activities.Intro">
+    tools:context=".activities.Intro">
 
     <Button
         android:id="@+id/signin"

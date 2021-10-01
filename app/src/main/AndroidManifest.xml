@@ -13,7 +13,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name="SWEAT.activities.splashScreen"
+            android:name="com.workout.sweat.activities.splashScreen"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
@@ -23,41 +23,33 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="SWEAT.activities.Intro"
+        <activity android:name="com.workout.sweat.activities.Intro"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
 
-        <activity android:name="SWEAT.activities.SignUp"
+        <activity android:name="com.workout.sweat.activities.SignUp"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
-        <activity android:name="SWEAT.activities.SignIn"
+        <activity android:name="com.workout.sweat.activities.SignIn"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
 
         <activity
-            android:name="SWEAT.activities.MainActivity"
+            android:name="com.workout.sweat.activities.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="SWEAT.activities.Dashboard"
+            android:name="com.workout.sweat.activities.Dashboard"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="SWEAT.activities.ExerciseActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!--
-This tag is already added by default when you create an activity along with the layout file.
-        You just need add some extra attribute as per requirement.
-        -->
-        <activity
-            android:name="SWEAT.activities.FinishActivity"
+            android:name="com.workout.sweat.activities.ExerciseActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!--
@@ -65,7 +57,7 @@ This tag is already added by default when you create an activity along with the 
         You just need add some extra attribute as per requirement.
         -->
         <activity
-            android:name="SWEAT.activities.BMIActivity"
+            android:name="com.workout.sweat.activities.FinishActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!--
@@ -73,7 +65,15 @@ This tag is already added by default when you create an activity along with the 
         You just need add some extra attribute as per requirement.
         -->
         <activity
-            android:name="SWEAT.activities.HistoryActivity"
+            android:name="com.workout.sweat.activities.BMIActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--
+This tag is already added by default when you create an activity along with the layout file.
+        You just need add some extra attribute as per requirement.
+        -->
+        <activity
+            android:name="com.workout.sweat.activities.HistoryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>

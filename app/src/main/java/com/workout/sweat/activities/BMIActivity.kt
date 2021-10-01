@@ -1,4 +1,4 @@
-package SWEAT.activities
+package com.workout.sweat.activities
 
 import android.os.Bundle
 import android.view.View

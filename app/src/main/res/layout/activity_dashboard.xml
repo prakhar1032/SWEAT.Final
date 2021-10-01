@@ -7,7 +7,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="@drawable/baground"
-    tools:context="SWEAT.activities.MainActivity">
+    tools:context=".activities.Dashboard">
 
     <!--In ImageView we have done :
         1. Static height is defined in .

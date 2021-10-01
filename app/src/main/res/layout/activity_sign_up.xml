@@ -8,7 +8,7 @@
     android:background="@drawable/baground"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="SWEAT.activities.SignUp">
+    tools:context=".activities.SignUp">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_bmi_activity"
@@ -87,6 +87,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
+                    android:id="@+id/btn_sign_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

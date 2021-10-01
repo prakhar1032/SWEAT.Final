@@ -1,4 +1,4 @@
-package SWEAT.activities
+package com.workout.sweat.activities
 
 import android.content.Context
 import android.graphics.Color

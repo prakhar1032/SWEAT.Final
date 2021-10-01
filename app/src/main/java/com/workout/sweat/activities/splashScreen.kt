@@ -1,4 +1,4 @@
-package SWEAT.activities
+package com.workout.sweat.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

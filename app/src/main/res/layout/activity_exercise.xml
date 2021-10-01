@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="SWEAT.activities.ExerciseActivity">
+    tools:context=".activities.ExerciseActivity">
 
     <!--Here we have added list of points
     1. Added required custom background layout, text, color, size in

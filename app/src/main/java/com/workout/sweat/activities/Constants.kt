@@ -1,4 +1,4 @@
-package SWEAT.activities
+package com.workout.sweat.activities
 
 //import com.SWEAT.R
 import com.workout.sweat.R

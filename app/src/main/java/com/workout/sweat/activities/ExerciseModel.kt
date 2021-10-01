@@ -1,4 +1,4 @@
-package SWEAT.activities
+package com.workout.sweat.activities
 
 /**
  * This is used for exercise details it is a custom model class.
