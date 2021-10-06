@@ -6,8 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import com.workout.sweat.R
-
-//import com.SWEAT.R
+import com.workout.sweat.firebase.FirestoreClass
 
 class splashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,10 +22,21 @@ class splashScreen : AppCompatActivity() {
 
         // Adding the handler to after the a task after some delay.
         Handler().postDelayed({
+
+            // Get the current user id
+            val currentUserID = FirestoreClass().getCurrentUserID()
             // Start the Intro Activity
-            startActivity(Intent(this@splashScreen, Intro::class.java))
+
+            if (currentUserID.isNotEmpty()) {
+                // Start the Main Activity
+                startActivity(Intent(this, MainActivity::class.java))
+            } else {
+                // Start the Intro Activity
+                startActivity(Intent(this, Intro::class.java))
+            }
             finish() // Call this when your activity is done and should be closed.
-        }, 2000) // Here we pass the delay time in milliSeconds after which the splash activity will disappear.
+            // END
+        }, 2500) // Here we pass the delay time in milliSeconds after which the splash activity will disappear.
 
     }
 }

@@ -1,6 +1,5 @@
 package com.workout.sweat.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.WindowManager
@@ -10,7 +9,8 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.workout.sweat.R
-import com.workout.sweat.activities.BaseActivity
+import com.workout.sweat.firebase.FirestoreClass
+import com.workout.sweat.model.User
 import kotlinx.android.synthetic.main.activity_bmi.*
 import kotlinx.android.synthetic.main.activity_bmi.toolbar_bmi_activity
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -31,7 +31,7 @@ class SignUp : BaseActivity() {
             onBackPressed()
         }
 
-        btn_sign_up.setOnClickListener{
+        btn_sign_up.setOnClickListener {
             registerUser()
         }
     }
@@ -60,9 +60,6 @@ class SignUp : BaseActivity() {
                 .addOnCompleteListener(
                     OnCompleteListener<AuthResult> { task ->
 
-                        // Hide the progress dialog
-                        hideProgressDialog()
-
                         // If the registration is successfully done
                         if (task.isSuccessful) {
 
@@ -71,24 +68,12 @@ class SignUp : BaseActivity() {
                             // Registered Email
                             val registeredEmail = firebaseUser.email!!
 
-                            Toast.makeText(
-                                this@SignUp,
-                                "$name you have successfully registered with email id $registeredEmail.",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            val user = User(
+                                firebaseUser.uid, name, registeredEmail
+                            )
 
-                            /**
-                             * Here the new user registered is automatically signed-in so we just sign-out the user from firebase
-                             * and send him to Intro Screen for Sign-In
-                             */
-
-                            /**
-                             * Here the new user registered is automatically signed-in so we just sign-out the user from firebase
-                             * and send him to Intro Screen for Sign-In
-                             */
-                            FirebaseAuth.getInstance().signOut()
-                            // Finish the Sign-Up Screen
-                            finish()
+                            // call the registerUser function of FirestoreClass to make an entry in the database.
+                            FirestoreClass().registerUser(this@SignUp, user)
                         } else {
                             Toast.makeText(
                                 this@SignUp,
@@ -99,7 +84,6 @@ class SignUp : BaseActivity() {
                     })
         }
     }
-    // END
 
     // START
     /**
@@ -125,5 +109,28 @@ class SignUp : BaseActivity() {
         }
     }
     // END
+
+    /**
+     * A function to be called the user is registered successfully and entry is made in the firestore database.
+     */
+    fun userRegisteredSuccess() {
+
+        Toast.makeText(
+            this@SignUp,
+            "You have successfully registered.",
+            Toast.LENGTH_SHORT
+        ).show()
+
+        // Hide the progress dialog
+        hideProgressDialog()
+
+        /**
+         * Here the new user registered is automatically signed-in so we just sign-out the user from firebase
+         * and send him to Intro Screen for Sign-In
+         */
+        FirebaseAuth.getInstance().signOut()
+        // Finish the Sign-Up Screen
+        finish()
+    }
 
 }

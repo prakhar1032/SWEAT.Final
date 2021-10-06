@@ -1,13 +1,14 @@
 package com.workout.sweat.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.WindowManager
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.workout.sweat.R
+import com.workout.sweat.firebase.FirestoreClass
+import com.workout.sweat.model.User
 import kotlinx.android.synthetic.main.activity_bmi.*
 import kotlinx.android.synthetic.main.activity_bmi.toolbar_bmi_activity
 import kotlinx.android.synthetic.main.activity_sign_in.*
@@ -37,6 +38,9 @@ class SignIn : BaseActivity() {
         // END
     }
 
+    /**
+     * A function for Sign-In using the registered user using the email and password.
+     */
     private fun signInRegisteredUser() {
         // Here we get the text from editText and trim the space
         val email: String = et_email.text.toString().trim { it <= ' ' }
@@ -49,16 +53,11 @@ class SignIn : BaseActivity() {
             // Sign-In using FirebaseAuth
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
-                    hideProgressDialog()
                     if (task.isSuccessful) {
-
-                        Toast.makeText(
-                            this@SignIn,
-                            "You have successfully signed in.",
-                            Toast.LENGTH_LONG
-                        ).show()
-
-                        startActivity(Intent(this@SignIn, MainActivity::class.java))
+                        // TODO (Step 2: Remove the toast message and call the FirestoreClass signInUser function to get the data of user from database. And also move the code of hiding Progress Dialog and Launching MainActivity to Success function.)
+                        // Calling the FirestoreClass signInUser function to get the data of user from database.
+                        FirestoreClass().signInUser(this@SignIn)
+                        // END
                     } else {
                         Toast.makeText(
                             this@SignIn,
@@ -69,7 +68,6 @@ class SignIn : BaseActivity() {
                 }
         }
     }
-    // END
 
     // START
     /**
@@ -85,6 +83,19 @@ class SignIn : BaseActivity() {
         } else {
             true
         }
+    }
+    // END
+
+    // START
+    /**
+     * A function to get the user details from the firestore database after authentication.
+     */
+    fun signInSuccess(user: User) {
+
+        hideProgressDialog()
+
+        startActivity(Intent(this@SignIn, MainActivity::class.java))
+        finish()
     }
     // END
 
