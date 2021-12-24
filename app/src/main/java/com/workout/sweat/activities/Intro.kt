@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import com.workout.sweat.R
-//import com.SWEAT.R
 import kotlinx.android.synthetic.main.activity_intro.*
 
 class Intro : AppCompatActivity() {
@@ -27,10 +26,10 @@ class Intro : AppCompatActivity() {
             startActivity(intent)
         }
 
-        skip.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
+//        skip.setOnClickListener {
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//        }
 
     }
 }

@@ -11,7 +11,7 @@
     tools:context=".activities.SignIn">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_bmi_activity"
+        android:id="@+id/toolbar_signin_activity"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="#FFFFFF" />

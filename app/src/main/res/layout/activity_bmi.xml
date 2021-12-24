@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -67,7 +66,6 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilMetricUnitWeight"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -82,7 +80,6 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilMetricUnitHeight"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
@@ -107,7 +104,6 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilUsUnitWeight"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -134,7 +130,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilUsUnitHeightFeet"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
@@ -151,7 +146,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilUsUnitHeightInch"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -223,7 +217,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginTop="35dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/item_circular_color_accent_background"
+            android:foreground="?attr/selectableItemBackground"
             android:text="CALCULATE"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />

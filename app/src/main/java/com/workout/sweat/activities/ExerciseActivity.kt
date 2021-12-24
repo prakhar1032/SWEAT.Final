@@ -167,12 +167,12 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
          *   {#onTick(long)} callbacks.
          */
         // Here we have started a timer of 10 seconds so the 10000 is milliseconds is 10 seconds and the countdown interval is 1 second so it 1000.
-        restTimer = object : CountDownTimer(1000, 1000) {
+        restTimer = object : CountDownTimer(10000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 restProgress++ // It is increased to ascending order
-                progressBar.progress = 1 - restProgress // Indicates progress bar progress
+                progressBar.progress = 10 - restProgress // Indicates progress bar progress
                 tvTimer.text =
-                    (1 - restProgress).toString()  // Current progress is set to text view in terms of seconds.
+                    (10 - restProgress).toString()  // Current progress is set to text view in terms of seconds.
             }
 
             override fun onFinish() {
@@ -222,11 +222,11 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         progressBarExercise.progress = exerciseProgress
 
-        exerciseTimer = object : CountDownTimer(1000, 1000) {
+        exerciseTimer = object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 exerciseProgress++
-                progressBarExercise.progress = 1 - exerciseProgress
-                tvExerciseTimer.text = (1 - exerciseProgress).toString()
+                progressBarExercise.progress = 30 - exerciseProgress
+                tvExerciseTimer.text = (30 - exerciseProgress).toString()
             }
 
             override fun onFinish() {

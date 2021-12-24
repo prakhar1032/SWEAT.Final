@@ -10,7 +10,6 @@ import com.workout.sweat.R
 import com.workout.sweat.firebase.FirestoreClass
 import com.workout.sweat.model.User
 import kotlinx.android.synthetic.main.activity_bmi.*
-import kotlinx.android.synthetic.main.activity_bmi.toolbar_bmi_activity
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignIn : BaseActivity() {
@@ -18,7 +17,7 @@ class SignIn : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        setSupportActionBar(toolbar_bmi_activity)
+        setSupportActionBar(toolbar_signin_activity)
         supportActionBar?.setDisplayHomeAsUpEnabled(true) //set back button
         supportActionBar?.title = "Sign In" // Setting an title in the action bar.
 
@@ -27,7 +26,7 @@ class SignIn : BaseActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        toolbar_bmi_activity.setNavigationOnClickListener {
+        toolbar_signin_activity.setNavigationOnClickListener {
             onBackPressed()
         }
 

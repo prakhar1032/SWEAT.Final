@@ -137,6 +137,7 @@ class BMIActivity : AppCompatActivity() {
         tvBMIType.visibility = View.INVISIBLE // Result is cleared and the labels are hidden
         tvBMIDescription.visibility = View.INVISIBLE // Result is cleared and the labels are hidden
     }
+    // END
 
     /**
      * Function is used to validate the input values for METRIC UNITS.
@@ -180,21 +181,21 @@ class BMIActivity : AppCompatActivity() {
 
         if (java.lang.Float.compare(bmi, 15f) <= 0) {
             bmiLabel = "Very severely underweight"
-            bmiDescription = "Oops! You really need to take care of your better! Eat more!"
+            bmiDescription = "Oops! You really need to take care of your body! Eat more!"
         } else if (java.lang.Float.compare(bmi, 15f) > 0 && java.lang.Float.compare(
                 bmi,
                 16f
             ) <= 0
         ) {
             bmiLabel = "Severely underweight"
-            bmiDescription = "Oops! You really need to take care of your better! Eat more!"
+            bmiDescription = "Oops! You really need to take care of your body! Eat more!"
         } else if (java.lang.Float.compare(bmi, 16f) > 0 && java.lang.Float.compare(
                 bmi,
                 18.5f
             ) <= 0
         ) {
             bmiLabel = "Underweight"
-            bmiDescription = "Oops! You really need to take care of your better! Eat more!"
+            bmiDescription = "Oops! You really need to take care of your body! Eat more!"
         } else if (java.lang.Float.compare(bmi, 18.5f) > 0 && java.lang.Float.compare(
                 bmi,
                 25f
@@ -208,14 +209,14 @@ class BMIActivity : AppCompatActivity() {
             ) <= 0
         ) {
             bmiLabel = "Overweight"
-            bmiDescription = "Oops! You really need to take care of your yourself! Workout maybe!"
+            bmiDescription = "Oops! You really need to take care of your body! Workout maybe!"
         } else if (java.lang.Float.compare(bmi, 30f) > 0 && java.lang.Float.compare(
                 bmi,
                 35f
             ) <= 0
         ) {
             bmiLabel = "Obese Class | (Moderately obese)"
-            bmiDescription = "Oops! You really need to take care of your yourself! Workout maybe!"
+            bmiDescription = "Oops! You really need to take care of your body! Workout maybe!"
         } else if (java.lang.Float.compare(bmi, 35f) > 0 && java.lang.Float.compare(
                 bmi,
                 40f
