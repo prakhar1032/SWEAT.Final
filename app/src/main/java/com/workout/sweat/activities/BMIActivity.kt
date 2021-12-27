@@ -5,12 +5,15 @@ import android.view.View
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.*
 import com.workout.sweat.R
 import kotlinx.android.synthetic.main.activity_bmi.*
 import java.math.BigDecimal
 import java.math.RoundingMode
 
 class BMIActivity : AppCompatActivity() {
+
+    lateinit var mAdView: AdView
 
     companion object {
         private const val METRIC_UNITS_VIEW = "METRIC_UNIT_VIEW" // Metric Unit View
@@ -30,6 +33,43 @@ class BMIActivity : AppCompatActivity() {
 
         toolbar_bmi_activity.setNavigationOnClickListener {
             onBackPressed()
+        }
+
+        //for ads
+        MobileAds.initialize(this) {}
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+        mAdView.adListener = object : AdListener() {
+            override fun onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                super.onAdLoaded()
+//                Toast.makeText(this@Intro,"AD Loaded",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                // Code to be executed when an ad request fails.
+                super.onAdFailedToLoad(adError)
+                mAdView.loadAd(adRequest)
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+                super.onAdOpened()
+            }
+
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+                super.onAdClicked()
+
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
         }
 
         makeVisibleMetricUnitsView()

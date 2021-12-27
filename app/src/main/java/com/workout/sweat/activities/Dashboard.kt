@@ -7,18 +7,17 @@ import android.view.WindowManager
 //import com.SWEAT.R
 import com.workout.sweat.R
 import kotlinx.android.synthetic.main.activity_dashboard.*
-import kotlinx.android.synthetic.main.activity_dashboard.toolbar_bmi_activity
 
 class Dashboard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        setSupportActionBar(toolbar_bmi_activity)
+        setSupportActionBar(toolbar_dashboard)
         supportActionBar?.setDisplayHomeAsUpEnabled(true) //set back button
-        supportActionBar?.title = "Start Workout" // Setting an title in the action bar.
+        supportActionBar?.title = "Start Your Workout" // Setting an title in the action bar.
 
-        toolbar_bmi_activity.setNavigationOnClickListener {
+        toolbar_dashboard.setNavigationOnClickListener {
             onBackPressed()
         }
         window.setFlags(

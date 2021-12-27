@@ -44,11 +44,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="NO DATA AVAILABLE"
+            android:text="NO DATA AVAILABLE \n (After completing workout circuit your data will show here)"
             android:textColor="#212121"
             android:textSize="18sp"
             android:visibility="visible"
             tools:visibility="gone" />
+
     </LinearLayout>
     <!--END-->
+
 </LinearLayout>
